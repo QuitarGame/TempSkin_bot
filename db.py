@@ -128,8 +128,10 @@ def _create_order(user_id: int, description: str, gender: str,
         "wishes": wishes,
         "references": references or [],
         "status": STATUS_NEW,
-        "artist_id": None,          # кто в итоге взял заказ в работу
-        "reject_reason": None,
+        "artist_id": None,          # кто в итоге взял заказ в работу (видно только админам/художнику)
+        "reject_reason": None,      # финальная сводная причина отказа (для заказчика, без имён)
+        "declined_reasons": {},     # {artist_id(str): причина или ""} — сырые причины по каждому художнику
+        "accept_comment": None,     # необязательный комментарий художника заказчику при принятии
         "message_ids": {},
         "declined_by": [],
         "broadcasted": False,

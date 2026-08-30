@@ -80,6 +80,13 @@ def deliver_files_kb() -> ReplyKeyboardMarkup:
     )
 
 
+def comment_optional_kb() -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text="Пропустить ➡️")]],
+        resize_keyboard=True, one_time_keyboard=True,
+    )
+
+
 def admin_panel_kb() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="🆕 Ждут рассылки (нет художников)", callback_data="list_status:новый")],
