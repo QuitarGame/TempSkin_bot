@@ -66,8 +66,18 @@ def artist_order_kb(order_id: str) -> InlineKeyboardMarkup:
 
 def artist_progress_kb(order_id: str) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🏁 Готово", callback_data=f"artist_done:{order_id}")],
+        [InlineKeyboardButton(text="🏁 Готово, прикрепить файлы и отправить", callback_data=f"artist_done:{order_id}")],
     ])
+
+
+def deliver_files_kb() -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text="✅ Завершить и отправить заказчику")],
+            [KeyboardButton(text="❌ Отменить")],
+        ],
+        resize_keyboard=True,
+    )
 
 
 def admin_panel_kb() -> InlineKeyboardMarkup:

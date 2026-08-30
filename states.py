@@ -15,3 +15,7 @@ class AdminAssignArtist(StatesGroup):
 
 class AdminAssignAdmin(StatesGroup):
     waiting_username = State()
+
+
+class ArtistDeliver(StatesGroup):
+    waiting_files = State()   # художник прикладывает готовые файлы скина перед завершением заказа
